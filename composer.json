@@ -1,0 +1,27 @@
+{
+    "name": "quimiphp/database",
+    "version": "0.0.1",
+    "description": "Database conection using PDO and .env variables",
+    "type": "library",
+    "license": "MIT",
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quimiphp\\Database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cristian Emanuelle Guzmán Suárez",
+            "email": "cristian.guzman.suarez@quimica.unam.mx"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}
