@@ -1,6 +1,6 @@
 <?php
 
-namespace Quimiphp\Database;
+namespace Ellephanty\Database;
 
 use PDO;
 

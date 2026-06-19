@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Quimiphp\\Database\\": "src/"
+            "Ellephanty\\Database\\": "src/"
         }
     },
     "authors": [
