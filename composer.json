@@ -1,5 +1,5 @@
 {
-    "name": "quimiphp/database",
+    "name": "ellephanty/database",
     "version": "0.0.1",
     "description": "Database conection using PDO and .env variables",
     "type": "library",
