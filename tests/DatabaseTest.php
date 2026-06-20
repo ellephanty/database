@@ -20,25 +20,17 @@ class DatabaseTest extends TestCase
     public function testConnectReturnsPdoInstance()
     {
         $db = new Database();
-        $pdo = $db->connect();
-
-        $this->assertInstanceOf(PDO::class, $pdo);
-
-        $db->close($pdo);
+        $db->connect();
+        $this->assertInstanceOf(PDO::class, $db->connection());
+        $db->close();
     }
 
     public function testCloseSetsConnectionToNull()
     {
         $db = new Database();
-        $pdo = $db->connect();
-
-        $db->close($pdo);
-
-        // usamos Reflection porque la propiedad es private
-        $reflection = new ReflectionClass($db);
-        $property = $reflection->getProperty('conexion');
-        $property->setAccessible(true);
-
-        $this->assertNull($property->getValue($db));
+        $db->connect();
+        $this->assertNotNull($db->connection());
+        $db->close();
+        $this->assertNull($db->connection());
     }
 }

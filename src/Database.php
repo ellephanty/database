@@ -11,7 +11,7 @@ class Database
   private $dbName;
   private $userName;
   private $password;
-  private $conexion;
+  private $connection;
 
   public function __construct()
   {
@@ -24,14 +24,19 @@ class Database
 
   public function connect()
   {
-    $this->conexion = null;
-    $this->conexion = new PDO($this->dsn . ':host=' . $this->host . ';dbname=' . $this->dbName . ';charset=utf8', $this->userName, $this->password);
-    $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $this->conexion;
+    $this->connection = null;
+    $this->connection = new PDO($this->dsn . ':host=' . $this->host . ';dbname=' . $this->dbName . ';charset=utf8', $this->userName, $this->password);
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $this->connection;
   }
 
-  public function close($conexion)
+  public function close()
   {
-    $this->conexion = null;
+    $this->connection = null;
+  }
+
+  public function connection()
+  {
+    return $this->connection;
   }
 }
